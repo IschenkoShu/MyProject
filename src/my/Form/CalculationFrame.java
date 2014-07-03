@@ -66,6 +66,8 @@ public class CalculationFrame extends javax.swing.JFrame {
         jTextField10 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(470, 550));
+        setPreferredSize(new java.awt.Dimension(470, 550));
 
         jLabel1.setText("Тираж*");
 
