@@ -6,10 +6,27 @@
 
 package my.Directory;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Shu
  */
 public class Size {
+    public class TSize{
+    String name;
+    int coast;
+        TSize(String t, int i){
+        name=t;
+        coast=i;
+    }
+}
+    ArrayList<TSize> LSize=new ArrayList<TSize>();
+    Size(){/*заменить на считывание из файла*/
+    TSize t1 = new TSize("140x200", 1);
+    TSize t2 = new TSize("200x290",2);
     
+    LSize.add(t1);
+    LSize.add(t2);
+    }
 }
