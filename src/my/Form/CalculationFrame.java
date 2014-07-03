@@ -21,6 +21,7 @@ public class CalculationFrame extends javax.swing.JFrame {
         this.cover = new Cover();
         this.lamination = new Lamination();
         this.binding = new Binding();
+        this.coast = new Coast();
         initComponents();
     }
 
@@ -225,6 +226,11 @@ public class CalculationFrame extends javax.swing.JFrame {
         jTextField10.setPreferredSize(new java.awt.Dimension(60, 20));
 
         jButton1.setText("Расчитать");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -382,7 +388,7 @@ public class CalculationFrame extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        coast_s=size.ChoiceSize( jComboBox1.getSelectedIndex());
+        s=size.ChoiceSize( jComboBox1.getSelectedIndex());
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -449,6 +455,20 @@ public class CalculationFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         discount = Integer.parseInt(jTextField6.getText());
     }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        s=size.ChoiceSize( jComboBox1.getSelectedIndex());
+        color_page = Integer.parseInt(jTextField2.getText());
+        black_page = Integer.parseInt(jTextField3.getText());
+        thickness=page.ChoicePageT( jComboBox2.getSelectedIndex());
+        density =page.ChoicePageD( jComboBox2.getSelectedIndex());
+        back = coast.ThicknessBack(color_page, black_page, thickness);
+        weight =coast.Weight(color_page, black_page, s, density);
+        jTextField9.setText(String.valueOf(weight));
+        jTextField10.setText(String.valueOf(back));
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -524,22 +544,26 @@ public class CalculationFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 
-double coast_s;
+int s;
 double coast_p1;
 double coast_p2;
 double coast_c;
 double coast_l;
 double coast_b;
-double printing;
-double color_page;
-double black_page;
-double color_inset;
-double inset_page;
-double discount;
+double thickness;
+double density;
+double weight;
+int printing;
+int color_page;
+int black_page;
+int color_inset;
+int inset_page;
+int discount;
+double back;
 Binding binding;
 Lamination lamination;
 Cover cover;
 Page page;
 Size size;
-
+Coast coast;
 }

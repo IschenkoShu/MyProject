@@ -24,10 +24,9 @@ public class Page {
         thickness=k;
         coast=i;
     }
-        
-    double GetCoast(){
-          return coast; 
-       }
+    double GetThickness(){return thickness;} 
+    double GetCoast(){return coast;}
+    double GetDensity(){return density;}
 }
     ArrayList<TPage> LPage = new ArrayList<TPage>();
     
@@ -49,9 +48,17 @@ public class Page {
     LPage.add(t7);
     }
     
-        public double ChoicePage(int i){
+    public double ChoicePage(int i){
         TPage t=LPage.get(i);
         return t.GetCoast();
+    }
+    public double ChoicePageT(int i){
+        TPage t=LPage.get(i);
+        return t.GetThickness();
+    }    
+    public double ChoicePageD(int i){
+        TPage t=LPage.get(i);
+        return t.GetDensity();
     }
  
 }

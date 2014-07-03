@@ -48,5 +48,19 @@ public class Coast {
         return t.GetCoast();
     }
  
+  public double ThicknessBack(int color, int black, double thickness){
+      double t=5;
+      t = (color+black)/2*thickness;
+      return t;
+  }
   
+  public double Weight(int color, int black, int size, double density){
+      double w;
+      double s;
+      if (size==1) s=0.14*0.2;
+      else s=0.2*0.29;
+      w=s*(color+black)*density/2+ s*2*250+10;
+      w=Math.rint(100*w)/100;
+      return w;
+  }
 }

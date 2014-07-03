@@ -26,9 +26,9 @@ public class Lamination {
 }
     ArrayList<TLamination> LLamination=new ArrayList<TLamination>();
     public Lamination(){/*заменить на считывание из файла*/
-    TLamination t1 = new TLamination("нет", 1);
-    TLamination t2 = new TLamination("матовая",2);
-    TLamination t3 = new TLamination("глянцевая",3);
+    TLamination t1 = new TLamination("нет", 0);
+    TLamination t2 = new TLamination("матовая", 10);
+    TLamination t3 = new TLamination("глянцевая", 10);
     LLamination.add(t1);
     LLamination.add(t2);
     LLamination.add(t3);
