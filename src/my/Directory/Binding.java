@@ -20,13 +20,20 @@ public class Binding {
         name=t;
         coast=i;
     }
+    int GetCoast(){
+          return coast; 
+    }
 }
     ArrayList<TBinding> LBinding=new ArrayList<TBinding>();
-    Binding(){/*заменить на считывание из файла*/
+    public Binding(){/*заменить на считывание из файла*/
     TBinding t1 = new TBinding("КБС", 1);
     TBinding t2 = new TBinding("скоба",2);
     
     LBinding.add(t1);
     LBinding.add(t2);
+    }
+    public int ChoiceBinding(int i){
+        TBinding t=LBinding.get(i);
+        return t.GetCoast();
     }
 }

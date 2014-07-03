@@ -20,14 +20,21 @@ public class Lamination {
         name=t;
         coast=i;
     }
+    int GetCoast(){
+          return coast; 
+    }
 }
     ArrayList<TLamination> LLamination=new ArrayList<TLamination>();
-    Lamination(){/*заменить на считывание из файла*/
+    public Lamination(){/*заменить на считывание из файла*/
     TLamination t1 = new TLamination("нет", 1);
     TLamination t2 = new TLamination("матовая",2);
     TLamination t3 = new TLamination("глянцевая",3);
     LLamination.add(t1);
     LLamination.add(t2);
     LLamination.add(t3);
+    }
+    public int ChoiceLamination(int i){
+        TLamination t=LLamination.get(i);
+        return t.GetCoast();
     }
 }

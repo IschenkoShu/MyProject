@@ -22,10 +22,14 @@ public class Page {
         density=j;
         coast=i;
     }
+        
+    int GetCoast(){
+          return coast; 
+       }
 }
     ArrayList<TPage> LPage = new ArrayList<TPage>();
     
-    Page(){/*заменить на считывание из файла*/
+    public Page(){/*заменить на считывание из файла*/
     TPage t1 = new TPage("офсетная", 65, 1);
     TPage t2 = new TPage("офсетная", 80, 2);
     TPage t3 = new TPage("мелованная", 130, 3);
@@ -41,6 +45,11 @@ public class Page {
     LPage.add(t5);
     LPage.add(t6);
     LPage.add(t7);
+    }
+    
+        public int ChoicePage(int i){
+        TPage t=LPage.get(i);
+        return t.GetCoast();
     }
  
 }

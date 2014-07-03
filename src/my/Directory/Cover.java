@@ -22,12 +22,23 @@ public class Cover {
         name=t;
         coast=i;
     }
-}ArrayList<TCover> LCover = new ArrayList<TCover>();
+        
+    int GetCoast(){
+          return coast; 
+       }
+}
+    
+    ArrayList<TCover> LCover = new ArrayList<TCover>();
 
-    Cover(){/*заменить на считывание из файла*/
+    public Cover(){/*заменить на считывание из файла*/
     TCover t1 = new TCover("мелованная", 1);
     TCover t2 = new TCover("каландрированная", 2);
     LCover.add(t1);
     LCover.add(t2);
+    }
+    
+        public int ChoiceCover(int i){
+        TCover t=LCover.get(i);
+        return t.GetCoast();
     }
 }

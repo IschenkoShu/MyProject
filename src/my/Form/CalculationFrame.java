@@ -5,7 +5,7 @@
  */
 
 package my.Form;
-
+import my.Directory.*;
 /**
  *
  * @author Shu
@@ -16,6 +16,11 @@ public class CalculationFrame extends javax.swing.JFrame {
      * Creates new form CalculationFrame
      */
     public CalculationFrame() {
+        this.size = new Size();
+        this.page = new Page();
+        this.cover = new Cover();
+        this.lamination = new Lamination();
+        this.binding = new Binding();
         initComponents();
     }
 
@@ -55,7 +60,6 @@ public class CalculationFrame extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
@@ -64,6 +68,7 @@ public class CalculationFrame extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(470, 550));
@@ -103,48 +108,123 @@ public class CalculationFrame extends javax.swing.JFrame {
         });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Офсетная 60", "Офсетная 80", "Мелованная 130", "Мелованная 150", "Каландрированная 90", "Каландрированная 120", "Каландрированная 160" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Мелованная", "Каландрированная" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Нет", "Матовая", "Глянцевая" }));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "КБС", "Скоба" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Да", "Нет" }));
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Нет" }));
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox6ActionPerformed(evt);
+            }
+        });
 
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Офсетная 60", "Офсетная 80", "Мелованная 130", "Мелованная 150", "Каландрированная 90", "Каландрированная 120", "Каландрированная 160" }));
+        jComboBox7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox7ActionPerformed(evt);
+            }
+        });
 
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField1.setPreferredSize(new java.awt.Dimension(60, 20));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField2.setPreferredSize(new java.awt.Dimension(60, 20));
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
+        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField3.setName(""); // NOI18N
         jTextField3.setPreferredSize(new java.awt.Dimension(60, 20));
         jTextField3.setRequestFocusEnabled(false);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
 
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField4.setPreferredSize(new java.awt.Dimension(60, 20));
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
 
+        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField5.setPreferredSize(new java.awt.Dimension(60, 20));
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
 
+        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField6.setPreferredSize(new java.awt.Dimension(60, 20));
-
-        jButton2.setText("Расчитать");
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("Цена за 1экз/руб");
 
+        jTextField7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField7.setPreferredSize(new java.awt.Dimension(60, 20));
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
 
         jLabel15.setText("Сумма руб");
 
+        jTextField8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField8.setPreferredSize(new java.awt.Dimension(60, 20));
 
         jLabel16.setText("Вес тиража кг");
 
+        jTextField9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField9.setPreferredSize(new java.awt.Dimension(60, 20));
 
         jLabel17.setText("Корешок мм");
 
+        jTextField10.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jTextField10.setPreferredSize(new java.awt.Dimension(60, 20));
+
+        jButton1.setText("Расчитать");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,7 +233,6 @@ public class CalculationFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
                     .addComponent(jLabel14)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15)
@@ -161,18 +240,19 @@ public class CalculationFrame extends javax.swing.JFrame {
                     .addComponent(jLabel16)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2)
+                .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -302,7 +382,73 @@ public class CalculationFrame extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+        coast_s=size.ChoiceSize( jComboBox1.getSelectedIndex());
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+        coast_p1=page.ChoicePage( jComboBox2.getSelectedIndex());
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+        coast_c=cover.ChoiceCover( jComboBox3.getSelectedIndex());
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+        // TODO add your handling code here:
+        coast_l=lamination.ChoiceLamination( jComboBox4.getSelectedIndex());
+    }//GEN-LAST:event_jComboBox4ActionPerformed
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+         coast_b=binding.ChoiceBinding( jComboBox5.getSelectedIndex());
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+        // TODO add your handling code here:
+        /*реализация в дальнейшем*/
+    }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void jComboBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox7ActionPerformed
+        // TODO add your handling code here:
+        coast_p2=page.ChoicePage( jComboBox7.getSelectedIndex());
+    }//GEN-LAST:event_jComboBox7ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+        printing = Integer.parseInt(jTextField1.getText());
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+        color_page = Integer.parseInt(jTextField2.getText());
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+        black_page = Integer.parseInt(jTextField3.getText());
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+        color_inset = Integer.parseInt(jTextField4.getText());
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+        inset_page = Integer.parseInt(jTextField5.getText());
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+        discount = Integer.parseInt(jTextField6.getText());
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -340,7 +486,7 @@ public class CalculationFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
@@ -377,4 +523,23 @@ public class CalculationFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+
+int coast_s;
+int coast_p1;
+int coast_p2;
+int coast_c;
+int coast_l;
+int coast_b;
+int printing;
+int color_page;
+int black_page;
+int color_inset;
+int inset_page;
+int discount;
+Binding binding;
+Lamination lamination;
+Cover cover;
+Page page;
+Size size;
+
 }

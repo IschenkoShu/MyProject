@@ -20,13 +20,23 @@ public class Size {
         name=t;
         coast=i;
     }
-}
+    int GetCoast(){
+          return coast; 
+       }
+    }
+    
     ArrayList<TSize> LSize=new ArrayList<TSize>();
-    Size(){/*заменить на считывание из файла*/
+    
+    public Size(){/*заменить на считывание из файла*/
     TSize t1 = new TSize("140x200", 1);
     TSize t2 = new TSize("200x290",2);
     
     LSize.add(t1);
     LSize.add(t2);
+    }
+    
+    public int ChoiceSize(int i){
+        TSize t=LSize.get(i);
+        return t.GetCoast();
     }
 }
