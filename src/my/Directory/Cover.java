@@ -22,11 +22,11 @@ public class Cover {
         name=t;
         coast=i;
     }
-}
+}ArrayList<TCover> LCover = new ArrayList<TCover>();
+
     Cover(){/*заменить на считывание из файла*/
     TCover t1 = new TCover("мелованная", 1);
     TCover t2 = new TCover("каландрированная", 2);
-    ArrayList<TCover> LCover = new ArrayList<TCover>();
     LCover.add(t1);
     LCover.add(t2);
     }
