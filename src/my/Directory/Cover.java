@@ -17,13 +17,13 @@ import java.util.ArrayList;
 public class Cover {
     public class TCover{
     String name;
-    int coast;
-        TCover(String t, int i){
+    double coast;
+        TCover(String t, double i){
         name=t;
         coast=i;
     }
         
-    int GetCoast(){
+    double GetCoast(){
           return coast; 
        }
 }
@@ -31,13 +31,13 @@ public class Cover {
     ArrayList<TCover> LCover = new ArrayList<TCover>();
 
     public Cover(){/*заменить на считывание из файла*/
-    TCover t1 = new TCover("мелованная", 1);
-    TCover t2 = new TCover("каландрированная", 2);
+    TCover t1 = new TCover("мелованная", 2.5);
+    TCover t2 = new TCover("каландрированная", 2.5);
     LCover.add(t1);
     LCover.add(t2);
     }
     
-        public int ChoiceCover(int i){
+        public double ChoiceCover(int i){
         TCover t=LCover.get(i);
         return t.GetCoast();
     }

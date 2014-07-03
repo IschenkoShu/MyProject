@@ -15,12 +15,12 @@ import java.util.ArrayList;
 public class Lamination {
         public class TLamination{
     String name;
-    int coast;
-        TLamination(String t, int i){
+    double coast;
+        TLamination(String t, double i){
         name=t;
         coast=i;
     }
-    int GetCoast(){
+    double GetCoast(){
           return coast; 
     }
 }
@@ -33,7 +33,7 @@ public class Lamination {
     LLamination.add(t2);
     LLamination.add(t3);
     }
-    public int ChoiceLamination(int i){
+    public double ChoiceLamination(int i){
         TLamination t=LLamination.get(i);
         return t.GetCoast();
     }

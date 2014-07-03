@@ -15,24 +15,24 @@ import java.util.ArrayList;
 public class Binding {
         public class TBinding{
     String name;
-    int coast;
-        TBinding(String t, int i){
+    double coast;
+        TBinding(String t, double i){
         name=t;
         coast=i;
     }
-    int GetCoast(){
+    double GetCoast(){
           return coast; 
     }
 }
     ArrayList<TBinding> LBinding=new ArrayList<TBinding>();
     public Binding(){/*заменить на считывание из файла*/
-    TBinding t1 = new TBinding("КБС", 1);
-    TBinding t2 = new TBinding("скоба",2);
+    TBinding t1 = new TBinding("КБС", 6);
+    TBinding t2 = new TBinding("скоба",7);
     
     LBinding.add(t1);
     LBinding.add(t2);
     }
-    public int ChoiceBinding(int i){
+    public double ChoiceBinding(int i){
         TBinding t=LBinding.get(i);
         return t.GetCoast();
     }

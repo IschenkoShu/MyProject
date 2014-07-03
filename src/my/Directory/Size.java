@@ -15,12 +15,12 @@ import java.util.ArrayList;
 public class Size {
     public class TSize{
     String name;
-    int coast;
-        TSize(String t, int i){
+    double coast;
+        TSize(String t, double i){
         name=t;
         coast=i;
     }
-    int GetCoast(){
+    double GetCoast(){
           return coast; 
        }
     }
@@ -35,7 +35,7 @@ public class Size {
     LSize.add(t2);
     }
     
-    public int ChoiceSize(int i){
+    public double ChoiceSize(int i){
         TSize t=LSize.get(i);
         return t.GetCoast();
     }

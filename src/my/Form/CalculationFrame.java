@@ -524,18 +524,18 @@ public class CalculationFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 
-int coast_s;
-int coast_p1;
-int coast_p2;
-int coast_c;
-int coast_l;
-int coast_b;
-int printing;
-int color_page;
-int black_page;
-int color_inset;
-int inset_page;
-int discount;
+double coast_s;
+double coast_p1;
+double coast_p2;
+double coast_c;
+double coast_l;
+double coast_b;
+double printing;
+double color_page;
+double black_page;
+double color_inset;
+double inset_page;
+double discount;
 Binding binding;
 Lamination lamination;
 Cover cover;
