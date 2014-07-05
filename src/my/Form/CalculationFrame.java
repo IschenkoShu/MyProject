@@ -469,10 +469,10 @@ public class CalculationFrame extends javax.swing.JFrame {
         thickness=page.ChoicePageT( jComboBox2.getSelectedIndex());
         density =page.ChoicePageD( jComboBox2.getSelectedIndex());
         back = coast.ThicknessBack(color_page, black_page, thickness);
-        weight =coast.Weight(color_page, black_page, s, density);
+        weight =coast.Weight(color_page, black_page, s, printing, density);
         sum = coast.SumPage(color_page, black_page, printing, s);
-        coast_print = coast.CoastPrint(color_page, black_page, sum);
-        coast_paper = coast.CoastPage(sum, coast_p1, coast_c);
+        coast_print = coast.CoastPrint(color_page, black_page, sum, printing, coast_c);
+        coast_paper = coast.CoastPage(sum, coast_p1, coast_c, printing);
         coast_cut = coast.CoastCut(printing);
         coast_lamination = coast.CoastLamination(s, coast_l);
         coef = coast.Coef();
