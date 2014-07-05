@@ -43,13 +43,13 @@ public class Coast {
     }
     
  
-  public double ThicknessBack(int color, int black, double thickness){
+    public double ThicknessBack(int color, int black, double thickness){
       double t;
       t = (color+black)/2*thickness;
       return t;
   }
   
-  public double Weight(int color, int black, int size, int printing, double density){
+    public double Weight(int color, int black, int size, int printing, double density){
       double w;
       double s;
       if (size==1) s=0.14*0.2;
@@ -59,27 +59,32 @@ public class Coast {
       return w;
   }
   
-   public int SumPage(int color, int black, int printing, int size){
+    public int ColorPage(int color, int printing, int size){
       int sum;
       if (size==1)
-      sum  = (color+black)/2*printing;
-      else sum = (color+black)*printing;
+      sum  = (color)/2*printing;
+      else sum = (color)*printing;
       return sum;     
-  }
-  
-   public double CoastPrint(int color, int black, int sumPage, int printing, double coastC){
-      double coast;
-      if (color==0){
-          coast = printBlack.GetCoast();
-      }
-      else {
-          coast = printColor.GetCoast();
-      }
-      double sum=sumPage*coast+coastC*printing;
+    }
+    public int BlackPage (int black, int printing, int size){
+           int sum;
+      if (size==1)
+      sum  = (black)/2*printing;
+      else sum = (black)*printing;
+      return sum;   
+    }
+    public double CoastPrint(int color, int black, int printing, double coastC,int size){
+      double coastBlack = printBlack.GetCoast();
+      double coastColor = printColor.GetCoast();
+      double sum;
+      if (size==1)  sum =color*coastColor+black*coastBlack+coastC*printing;
+      else sum =color*coastColor+black*coastBlack+2*coastC*printing;
       return sum;
    }
-    public double CoastPage(int sumPage, double coastP, double coastC, int printing){
-      double sum=sumPage*coastP + coastC*printing;   
+    public double CoastPage(int color, int black, double coastP, double coastC, int printing, int size){
+      double sum;
+      if (size==1) sum =(color+black)*coastP + coastC*printing;
+      else sum =(color+black)*coastP + 2*coastC*printing; 
       return sum;
    }
     public double CoastCut(int printing){  
@@ -87,7 +92,7 @@ public class Coast {
       double sum=printing*coast;  
       return sum; 
      }
-     public double CoastLamination(int size, double coastL){
+    public double CoastLamination(int size, double coastL){
       double sum;
       if (size==2) sum=coastL*2;
       else sum = coastL;
@@ -98,7 +103,7 @@ public class Coast {
          return 2;
      }
      
-  public double CoastBook(double coast_print, double coast_page, double coast_cut, double coast_lamination, double coef, int printing, double coastB){
+    public double CoastBook(double coast_print, double coast_page, double coast_cut, double coast_lamination, double coef, int printing, double coastB){
       double coast;
       double preparing = prepar.GetCoast();
       coast = (coast_print+ coast_page +coast_cut+printing*coastB+preparing)/printing*coef+coast_lamination;
@@ -106,7 +111,7 @@ public class Coast {
       return coast;
   }
   
-  public double CoastPrinting(double coast, int printing){
+    public double CoastPrinting(double coast, int printing){
       double coastP;
       coastP=coast*printing;
       coastP=Math.rint(100*coastP)/100;
