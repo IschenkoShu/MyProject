@@ -103,10 +103,10 @@ public class Coast {
          return 2;
      }
      
-    public double CoastBook(double coast_print, double coast_page, double coast_cut, double coast_lamination, double coef, int printing, double coastB){
+    public double CoastBook(double coast_print, double coast_page, double coast_cut, double coast_lamination, double coef, int printing, double coastB, int discount){
       double coast;
       double preparing = prepar.GetCoast();
-      coast = (coast_print+ coast_page +coast_cut+printing*coastB+preparing)/printing*coef+coast_lamination;
+      coast = ((coast_print+ coast_page +coast_cut+printing*coastB+preparing)/printing*coef+coast_lamination)*(100-discount)/100;
       coast=Math.rint(100*coast)/100;
       return coast;
   }
