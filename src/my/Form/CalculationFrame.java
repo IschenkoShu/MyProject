@@ -5,6 +5,8 @@
  */
 
 package my.Form;
+import java.awt.Color;
+import javax.swing.ImageIcon;
 import my.Directory.*;
 /**
  *
@@ -16,6 +18,7 @@ public class CalculationFrame extends javax.swing.JFrame {
      * Creates new form CalculationFrame
      */
     public CalculationFrame() {
+        this.setIconImage(new ImageIcon(getClass().getResource("onto.png")).getImage());
         this.size = new Size();
         this.page = new Page();
         this.cover = new Cover();
@@ -53,7 +56,7 @@ public class CalculationFrame extends javax.swing.JFrame {
         Cover_Frame = new javax.swing.JComboBox();
         Lamination_Frame = new javax.swing.JComboBox();
         Binding_Frame = new javax.swing.JComboBox();
-        jTextField6 = new javax.swing.JTextField();
+        Discount_Frame = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -151,6 +154,7 @@ public class CalculationFrame extends javax.swing.JFrame {
         );
 
         Printing_Frame.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        Printing_Frame.setToolTipText("");
         Printing_Frame.setPreferredSize(new java.awt.Dimension(60, 20));
         Printing_Frame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,11 +209,11 @@ public class CalculationFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jTextField6.setPreferredSize(new java.awt.Dimension(60, 20));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        Discount_Frame.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        Discount_Frame.setPreferredSize(new java.awt.Dimension(60, 20));
+        Discount_Frame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                Discount_FrameActionPerformed(evt);
             }
         });
 
@@ -257,7 +261,7 @@ public class CalculationFrame extends javax.swing.JFrame {
                     .addComponent(Cover_Frame, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Lamination_Frame, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Binding_Frame, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Discount_Frame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -300,7 +304,7 @@ public class CalculationFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Discount_Frame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jLayeredPane1.setLayer(Printing_Frame, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Size_Frame, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -310,7 +314,7 @@ public class CalculationFrame extends javax.swing.JFrame {
         jLayeredPane1.setLayer(Cover_Frame, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Lamination_Frame, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Binding_Frame, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jTextField6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(Discount_Frame, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -371,45 +375,66 @@ public class CalculationFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_Binding_FrameActionPerformed
 
     private void Printing_FrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Printing_FrameActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:   
     }//GEN-LAST:event_Printing_FrameActionPerformed
 
     private void Color_FrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Color_FrameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Color_FrameActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void Discount_FrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Discount_FrameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_Discount_FrameActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        s=size.ChoiceSize( Size_Frame.getSelectedIndex());
-        coast_p1=page.ChoicePage( Page_Frame.getSelectedIndex());
-        coast_c=cover.ChoiceCover( Cover_Frame.getSelectedIndex());
-        coast_l=lamination.ChoiceLamination( Lamination_Frame.getSelectedIndex());
-        coast_b=binding.ChoiceBinding( Binding_Frame.getSelectedIndex());
-        printing = Integer.parseInt(Printing_Frame.getText());
-        color_page = Integer.parseInt(Color_Frame.getText());
-        black_page = Integer.parseInt(Black_Frame.getText());
-        thickness=page.ChoicePageT( Page_Frame.getSelectedIndex());
-        density =page.ChoicePageD( Page_Frame.getSelectedIndex());
-        back = coast.ThicknessBack(color_page, black_page, thickness);
-        weight =coast.Weight(color_page, black_page, s, printing, density);
-        sum_color = coast.ColorPage(color_page, printing, s);
-        sum_black = coast.BlackPage(black_page, printing, s);
-        coast_print = coast.CoastPrint(sum_color, sum_black, printing, coast_c, s);
-        coast_paper = coast.CoastPage(sum_color, sum_black, coast_p1, coast_c, printing, s);
-        coast_cut = coast.CoastCut(printing);
-        coast_lamination = coast.CoastLamination(s, coast_l);
-        coef = coast.Coef();
-        coastB = coast.CoastBook(coast_print, coast_paper, coast_cut, coast_lamination, coef, printing, coast_b);
-        coastT = coast.CoastPrinting(coastB, printing);
-        CoastOne_Frame.setText(String.valueOf(coastB));
-        CoastAll_Frame.setText(String.valueOf(coastT));
-        Weight_Frame.setText(String.valueOf(weight));
-        Back_Frame.setText(String.valueOf(back));
-        
+        String print = Printing_Frame.getText();;
+        String color = Color_Frame.getText();
+        String black = Black_Frame.getText();
+        String disc = Discount_Frame.getText(); 
+        if (print.length() == 0){Printing_Frame.setBackground(Color.RED);}
+        else  {
+            printing = Integer.parseInt(print);
+            if (printing<1){Printing_Frame.setBackground(Color.RED);}
+            else Printing_Frame.setBackground(Color.white);
+        }
+        if (color.length() == 0){Color_Frame.setBackground(Color.RED);}
+        else {
+            color_page = Integer.parseInt(color);
+            Color_Frame.setBackground(Color.white);
+        }
+        if (black.length() == 0){Black_Frame.setBackground(Color.RED);}
+        else{
+            black_page = Integer.parseInt(black);
+            Black_Frame.setBackground(Color.white);
+        }
+        if (disc.length() != 0) discount = Integer.parseInt(disc);
+        if (((color_page!=0)||(black_page!=0))&&(printing!=0)){
+            Color_Frame.setBackground(Color.white);
+            Black_Frame.setBackground(Color.white);
+            s=size.ChoiceSize( Size_Frame.getSelectedIndex());
+            coast_p1=page.ChoicePage( Page_Frame.getSelectedIndex());
+            coast_c=cover.ChoiceCover( Cover_Frame.getSelectedIndex());
+            coast_l=lamination.ChoiceLamination( Lamination_Frame.getSelectedIndex());
+            coast_b=binding.ChoiceBinding( Binding_Frame.getSelectedIndex());             
+            thickness=page.ChoicePageT( Page_Frame.getSelectedIndex());
+            density =page.ChoicePageD( Page_Frame.getSelectedIndex());        
+            back = coast.ThicknessBack(color_page, black_page, thickness);
+            weight =coast.Weight(color_page, black_page, s, printing, density);
+            sum_color = coast.ColorPage(color_page, printing, s);
+            sum_black = coast.BlackPage(black_page, printing, s);
+            coast_print = coast.CoastPrint(sum_color, sum_black, printing, coast_c, s);
+            coast_paper = coast.CoastPage(sum_color, sum_black, coast_p1, coast_c, printing, s);
+            coast_cut = coast.CoastCut(printing);
+            coast_lamination = coast.CoastLamination(s, coast_l);
+            coef = coast.Coef();
+            coastB = coast.CoastBook(coast_print, coast_paper, coast_cut, coast_lamination, coef, printing, coast_b,discount);
+            coastT = coast.CoastPrinting(coastB, printing);
+            CoastOne_Frame.setText(String.valueOf(coastB));
+            CoastAll_Frame.setText(String.valueOf(coastT));
+            Weight_Frame.setText(String.valueOf(weight));
+            Back_Frame.setText(String.valueOf(back));
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -455,6 +480,7 @@ public class CalculationFrame extends javax.swing.JFrame {
     private javax.swing.JTextField CoastOne_Frame;
     private javax.swing.JTextField Color_Frame;
     private javax.swing.JComboBox Cover_Frame;
+    private javax.swing.JTextField Discount_Frame;
     private javax.swing.JComboBox Lamination_Frame;
     private javax.swing.JComboBox Page_Frame;
     private javax.swing.JTextField Printing_Frame;
@@ -476,7 +502,6 @@ public class CalculationFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 
 int s;
@@ -496,12 +521,12 @@ double coast_lamination;
 double coef;
 double coastB;
 double coastT;
-int printing;
-int color_page;
-int black_page;
+int printing=0;
+int color_page=0;
+int black_page=0;
 int color_inset;
 int inset_page;
-int discount;
+int discount=0;
 int sum_color;
 int sum_black;
 Binding binding;
