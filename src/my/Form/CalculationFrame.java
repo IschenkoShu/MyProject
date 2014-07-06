@@ -19,6 +19,7 @@ public class CalculationFrame extends javax.swing.JFrame {
      */
     public CalculationFrame() {
         this.setIconImage(new ImageIcon(getClass().getResource("onto.png")).getImage());
+        this.setTitle("Цена книги");
         this.size = new Size();
         this.page = new Page();
         this.cover = new Cover();
@@ -388,7 +389,7 @@ public class CalculationFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String print = Printing_Frame.getText();;
+        String print = Printing_Frame.getText();
         String color = Color_Frame.getText();
         String black = Black_Frame.getText();
         String disc = Discount_Frame.getText(); 
@@ -484,7 +485,7 @@ public class CalculationFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox Lamination_Frame;
     private javax.swing.JComboBox Page_Frame;
     private javax.swing.JTextField Printing_Frame;
-    private javax.swing.JComboBox Size_Frame;
+    public javax.swing.JComboBox Size_Frame;
     private javax.swing.JTextField Weight_Frame;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
